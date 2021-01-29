@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnLocations: []
-  item: {fileID: 5467271086645257895, guid: b9c091da0543c6441aa74f0256bfa459, type: 3}
+  items: []
 --- !u!4 &703152067
 Transform:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject[] spawnLocations;
-    public GameObject item;
+    public GameObject[] items;
 
     private Vector3 respawnLocation;
 
@@ -18,11 +18,17 @@ public class Spawner : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
     {
-        item = (GameObject)Resources.Load("Item1", typeof(GameObject));
+        items = Resources.LoadAll<GameObject>("Items");
+        
+        if(items.Length <= spawnLocations.Length)
+		{
+            SpawnItems();
+		}
+		else
+		{
+            Debug.Log("Za duzo itemów za mało spawnów");
+		}
 
-        respawnLocation = item.transform.position;
-
-        SpawnItem();
     }
 
     // Update is called once per frame
@@ -31,9 +37,27 @@ public class Spawner : MonoBehaviour
         
     }
 
-    void SpawnItem()
+    void SpawnItems()
 	{
-        int spawn = Random.Range(0, spawnLocations.Length);
-        GameObject.Instantiate(item, spawnLocations[spawn].transform.position, Quaternion.identity);
-	}
+        List<int> listOfRandSpawns = new List<int>();
+        int spawn;
+        for(int i=0; i < items.Length; i++)
+		{
+            do
+            {
+                spawn = Random.Range(0, spawnLocations.Length);
+
+            } while (listOfRandSpawns.Contains(spawn));
+            listOfRandSpawns.Add(spawn);
+        }
+
+        int x = 0;
+        foreach (GameObject item in items)
+        {
+            
+            GameObject.Instantiate(item, spawnLocations[listOfRandSpawns[x]].transform.position, Quaternion.identity);
+            x++;
+        }
+
+    }
 }
