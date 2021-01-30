@@ -3,7 +3,22 @@ guid: 3cbf9e591d3b35842a6d1a21e21ed260
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.006
+    second: {fileID: 2100000, guid: 0b9e8fed74ba9204eb9508d370d31a17, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.016
+    second: {fileID: 2100000, guid: 6080fa6bf6851a0448a5f6040a4ab061, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Oczysz
+    second: {fileID: 2100000, guid: a4004e8242652aa4c9560d07b89b79eb, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

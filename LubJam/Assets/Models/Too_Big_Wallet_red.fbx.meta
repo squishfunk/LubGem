@@ -3,7 +3,27 @@ guid: a2b0b999f0ec9284780575edbfbb3617
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: bea8b413c926a0c46aa67c391fa5d403, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Money dark green
+    second: {fileID: 2100000, guid: 928d29e1127b9ca43aae12b6d960b6f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Money light green
+    second: {fileID: 2100000, guid: a4004e8242652aa4c9560d07b89b79eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wallet - red
+    second: {fileID: 2100000, guid: 8e5a43c502b6d954c8e0487b42c072e2, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

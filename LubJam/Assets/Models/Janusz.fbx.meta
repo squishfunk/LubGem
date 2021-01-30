@@ -6,7 +6,37 @@ ModelImporter:
   - first:
       74: -5757022270516158730
     second: Janusz|JanuszAction
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black sunglasses
+    second: {fileID: 2100000, guid: b200e1988f301dc4ab29569cc8f83849, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cap
+    second: {fileID: 2100000, guid: 45bb43844d9f6ac4e9d134cc15c0e90e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: 0b9e8fed74ba9204eb9508d370d31a17, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: 355a3ce5a3b50514689dfed1d1b32a28, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Moustache
+    second: {fileID: 2100000, guid: 355a3ce5a3b50514689dfed1d1b32a28, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skin
+    second: {fileID: 2100000, guid: 0596a1e92f9805048967d2eb5a3f7b9d, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

@@ -3,7 +3,22 @@ guid: aee49f114c6ca4f41bade6aaa294ce4d
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.016
+    second: {fileID: 2100000, guid: 6080fa6bf6851a0448a5f6040a4ab061, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Polska
+    second: {fileID: 2100000, guid: a4004e8242652aa4c9560d07b89b79eb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Woda
+    second: {fileID: 2100000, guid: 0b9e8fed74ba9204eb9508d370d31a17, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
