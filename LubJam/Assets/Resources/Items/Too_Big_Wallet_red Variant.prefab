@@ -80,7 +80,12 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a2b0b999f0ec9284780575edbfbb3617,
         type: 3}
       propertyPath: m_Name
-      value: Too_Big_Wallet_red
+      value: Too_Big_Wallet_red Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a2b0b999f0ec9284780575edbfbb3617,
+        type: 3}
+      propertyPath: m_TagString
+      value: ItemsToFind
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2b0b999f0ec9284780575edbfbb3617, type: 3}

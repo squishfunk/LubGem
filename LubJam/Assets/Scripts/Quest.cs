@@ -7,8 +7,7 @@ public class Quest
 {
 	public bool isActive;
 
-	public string itemToFound;
+	public GameObject itemToFound;
 	public float duration;
-	public string description;
 	//public Audio sound;
 }
