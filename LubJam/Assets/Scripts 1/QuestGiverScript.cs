@@ -25,20 +25,31 @@ public class QuestGiverScript : MonoBehaviour
 
 	public void Update()
 	{
+
+        //        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+        //Debug.DrawRay(ray.origin, ray.direction * 2f, Color.red);
+
+        //RaycastHit hitInfo;
+      
+        //if (Physics.Raycast(ray, out hitInfo, 2f));
+        //{
+        //    var selection = hitInfo.transform;
+
+
 		//ZMIENIC TO NA RAYCASTA!!!!!!!!!!!!!
-		if (Input.GetKeyDown(KeyCode.X)) 
-		{
-			if (GameIsPause)
-			{
-				CloseQuestWindow();
-			}
-			else
-			{
-				CreateRandomQuest();
-				OpenQuestWindow();
-			}
+		//if (Input.GetKeyDown(KeyCode.X)) 
+		//{
+		//	if (GameIsPause)
+		//	{
+		//		CloseQuestWindow();
+		//	}
+		//	else
+		//	{
+		//		CreateRandomQuest();
+		//		OpenQuestWindow();
+		//	}
 			
-		}
+		//}
 		
 	}
 

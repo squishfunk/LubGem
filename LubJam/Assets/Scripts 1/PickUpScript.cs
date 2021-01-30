@@ -30,13 +30,18 @@ public class PickUpScript : MonoBehaviour
     {
         if (itemInteraction.CanBePicked && Input.GetMouseButtonDown(1) && IsPicked)
         {
-         //   this.gameObject.GetComponent<Collider>().enabled = true;
-            this.transform.parent = null;
-            rg.isKinematic = false;
-            rg.useGravity = true;
-            rg.AddForce(PlayerHands.forward * force, ForceMode.Impulse);
+            Throw();
          
         }
+    }
+
+    private void Throw()
+    {
+        this.transform.parent = null;
+        rg.isKinematic = false;
+        rg.useGravity = true;
+        rg.AddForce(PlayerHands.forward * force, ForceMode.Impulse);
+        this.gameObject.GetComponent<Collider>().isTrigger = false;
     }
 
     private void OnMouseDown()
@@ -45,29 +50,29 @@ public class PickUpScript : MonoBehaviour
         else
         {
             IsPicked = true;
-             // this.gameObject.GetComponent<Collider>().enabled = false;
-            // this.gameObject.GetComponent<Collider>().isTrigger = true;
+
+            this.gameObject.GetComponent<Collider>().isTrigger = true;
             this.transform.position = PlayerHands.position;
+            rg.MovePosition(PlayerHands.position);
             this.transform.parent = GameObject.Find("PlayerHands").transform;
             rg.velocity = Vector3.zero;
             rg.useGravity = false;
             rg.isKinematic = true;
-
-
-
+            this.gameObject.GetComponent<Collider>().isTrigger = true;
+          //  this.gameObject.GetComponent<Collider>().enabled = false;
         }       
     }
 
     private void OnMouseUp()
     {
         IsPicked = false;
-        //this.gameObject.GetComponent<Collider>().isTrigger = false;
-      //  this.gameObject.GetComponent<Collider>().enabled = true;
+
+       // this.gameObject.GetComponent<Collider>().enabled = true;
         this.transform.parent = null;
         rg.useGravity = true;
         rg.isKinematic = false;
-      //  this.gameObject.GetComponent<Collider>().enabled = true;
-
+        this.gameObject.GetComponent<Collider>().isTrigger = false;
+        //  this.gameObject.GetComponent<Collider>().enabled = true;
     }
 
 

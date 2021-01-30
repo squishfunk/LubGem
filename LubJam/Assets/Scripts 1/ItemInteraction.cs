@@ -7,7 +7,7 @@ public class ItemInteraction : MonoBehaviour
     [SerializeField]
     private Camera camera;
 
-    private Item itemBeingSelected;
+    private PickUpScript itemBeingSelected;
 
     [SerializeField]
     private LayerMask layerMask;
@@ -46,7 +46,7 @@ public class ItemInteraction : MonoBehaviour
                 return;
             }
     
-            else if (selection.GetComponent<Item>() != null)
+            else if (selection.GetComponent<PickUpScript>() != null)
             {
                 CanBePicked = true;
                 pickUpPanel.SetActive(true);

@@ -29,18 +29,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.59, z: 0}
---- !u!114 &7728706350457244730
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3049281999307610643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 004cc10dbeabff94aac5610b253871ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1938702039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,7 +110,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9e4aaa7f656a79e4bb073d2067b36e1a,
         type: 3}
       propertyPath: m_Name
-      value: Kubek_goraca_czekolada Test
+      value: Kubek_goraca_czekolada Test 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9e4aaa7f656a79e4bb073d2067b36e1a,
         type: 3}
