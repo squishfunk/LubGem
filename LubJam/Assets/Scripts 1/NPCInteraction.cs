@@ -16,6 +16,8 @@ public class NPCInteraction : MonoBehaviour
     [SerializeField]
     private GameObject questPanel;
 
+    public bool CanRecevieQuest = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +43,7 @@ public class NPCInteraction : MonoBehaviour
             if (selection == null)
             {
                 questPanel.SetActive(false);
+                CanRecevieQuest = false;
                 return;
             }
 
@@ -48,7 +51,9 @@ public class NPCInteraction : MonoBehaviour
             {
                 Debug.Log("NPC możliwy do zagadania");
                 questPanel.SetActive(true);
-               
+                CanRecevieQuest = true;
+
+
             }
         }
 

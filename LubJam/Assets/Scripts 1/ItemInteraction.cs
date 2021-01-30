@@ -32,11 +32,11 @@ public class ItemInteraction : MonoBehaviour
     private void SelectItem()
     {
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-        Debug.DrawRay(ray.origin, ray.direction * 2f, Color.red);
+        Debug.DrawRay(ray.origin, ray.direction * 3f, Color.red);
 
         RaycastHit hitInfo;
       
-        if (Physics.Raycast(ray, out hitInfo, 2f));
+        if (Physics.Raycast(ray, out hitInfo, 3f));
         {
             var selection = hitInfo.transform;
             if (selection == null)

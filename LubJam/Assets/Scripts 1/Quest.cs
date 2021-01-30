@@ -10,4 +10,5 @@ public class Quest
 	public GameObject itemToFound;
 	public float duration;
 	//public Audio sound;
+    //public string questInfo;  MM
 }

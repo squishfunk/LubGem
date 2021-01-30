@@ -43,7 +43,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerHands: {fileID: 0}
   itemInteraction: {fileID: 0}
-  force: 5
+  force: 10
   IsPicked: 0
 --- !u!1001 &2778808945793574722
 PrefabInstance:

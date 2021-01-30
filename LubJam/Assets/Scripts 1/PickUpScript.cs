@@ -21,7 +21,7 @@ public class PickUpScript : MonoBehaviour
         rg = GetComponent<Rigidbody>();
         PlayerHands = GameObject.FindGameObjectWithTag("PlayerHands").transform;
         itemInteraction = FindObjectOfType<ItemInteraction>();
-        force = 5f;
+        force = 10f;
     }
 
 
