@@ -3799,7 +3799,6 @@ MonoBehaviour:
   questWindow: {fileID: 74892033}
   itemToFound: {fileID: 0}
   duration: {fileID: 0}
-  npcInteraction: {fileID: 0}
 --- !u!1 &1271862803 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f1bfc7dc1d10c5343a29815de1ddb22f,
@@ -3840,7 +3839,6 @@ MonoBehaviour:
   questWindow: {fileID: 1580209789}
   itemToFound: {fileID: 0}
   duration: {fileID: 0}
-  npcInteraction: {fileID: 0}
 --- !u!4 &1271862806 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f1bfc7dc1d10c5343a29815de1ddb22f,
@@ -6019,6 +6017,7 @@ MonoBehaviour:
     m_Bits: 0
   questPanel: {fileID: 1087678029}
   CanRecevieQuest: 0
+  questGiver: {fileID: 1258687444}
 --- !u!4 &3043624059703226827
 Transform:
   m_ObjectHideFlags: 0

@@ -20,6 +20,9 @@ public class NPCInteraction : MonoBehaviour
 
     private Transform _selection;
 
+    public GameObject questGiver;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +39,7 @@ public class NPCInteraction : MonoBehaviour
     {
         if(_selection != null)
 		{
+            //CloseQuestWindow();
             questPanel.SetActive(false);
             CanRecevieQuest = false;
             _selection = null;

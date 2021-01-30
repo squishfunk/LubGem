@@ -17,61 +17,29 @@ public class QuestGiverScript : MonoBehaviour
 	public Text itemToFound;
 	public Text duration;
 
-    [Header("MM parameters")]
-    public NPCInteraction npcInteraction;
-    private bool isQuestInfoActive = false;
-
 	public void Start()
 	{
 		//PRZYPISUJE WSZYSTKIE PRZEDMIOTY Z FOLDERU RESOURCES/ITEMS DO ZMIENNEJ ITEMS
 		items = Resources.LoadAll<GameObject>("Items");
-
-        //MM
-        npcInteraction = FindObjectOfType<NPCInteraction>();
 	}
 
 	public void Update()
 	{
-        //MM
-        if(npcInteraction.CanRecevieQuest)
-        {
-            if(Input.GetMouseButtonUp(0) && !isQuestInfoActive)
-            {
-                questWindow.SetActive(true);
-                isQuestInfoActive = true;
-            }
-            else if (Input.GetMouseButtonUp(0) && isQuestInfoActive)
-                    {
-                     questWindow.SetActive(false);
-                     isQuestInfoActive = false;
-            }
-                    
-        }
-        //        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-        //Debug.DrawRay(ray.origin, ray.direction * 2f, Color.red);
-
-        //RaycastHit hitInfo;
-      
-        //if (Physics.Raycast(ray, out hitInfo, 2f));
-        //{
-        //    var selection = hitInfo.transform;
-
-
 		//ZMIENIC TO NA RAYCASTA!!!!!!!!!!!!!
-		//if (Input.GetKeyDown(KeyCode.X)) 
-		//{
-		//	if (GameIsPause)
-		//	{
-		//		CloseQuestWindow();
-		//	}
-		//	else
-		//	{
-		//		CreateRandomQuest();
-		//		OpenQuestWindow();
-		//	}
-			
-		//}
-		
+		if (Input.GetKeyDown(KeyCode.X))
+		{
+			if (GameIsPause)
+			{
+				CloseQuestWindow();
+			}
+			else
+			{
+				CreateRandomQuest();
+				OpenQuestWindow();
+			}
+
+		}
+
 	}
 
 	public void OpenQuestWindow()
