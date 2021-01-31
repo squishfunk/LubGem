@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class QuestGiverScript : MonoBehaviour
 {
+	public FirstPersonLook cameraMove;
 	public static bool GameIsPause = false;
 	public HandlingQuests player;
 
-	public GameObject[] items;
+	private GameObject[] items;
 
 	public Quest quest;
 
@@ -20,37 +22,27 @@ public class QuestGiverScript : MonoBehaviour
 	public void Start()
 	{
 		//PRZYPISUJE WSZYSTKIE PRZEDMIOTY Z FOLDERU RESOURCES/ITEMS DO ZMIENNEJ ITEMS
-		items = Resources.LoadAll<GameObject>("Items");
+		//items = Resources.LoadAll<GameObject>("Items");
+		items = Resources.LoadAll("Items").Cast<GameObject>().ToArray();
+		Debug.Log(items);
 	}
 
 	public void Update()
 	{
-		//ZMIENIC TO NA RAYCASTA!!!!!!!!!!!!!
-		if (Input.GetKeyDown(KeyCode.X))
-		{
-			if (GameIsPause)
-			{
-				CloseQuestWindow();
-			}
-			else
-			{
-				CreateRandomQuest();
-				OpenQuestWindow();
-			}
-
-		}
 
 	}
 
 	public void OpenQuestWindow()
 	{
+		CreateRandomQuest();
+		cameraMove.enabled = false;
 		//nadaje nazwe
 		itemToFound.text = quest.itemToFound.name;
 		duration.text = quest.duration.ToString();
 
 		//stopuje czas gry
 		questWindow.SetActive(true);
-		Time.timeScale = 0f;
+		//Time.timeScale = 0f;
 		GameIsPause = true;
 		Cursor.lockState = CursorLockMode.None;
 		Cursor.lockState = CursorLockMode.Confined;
@@ -58,8 +50,9 @@ public class QuestGiverScript : MonoBehaviour
 	}
 	public void CloseQuestWindow()
 	{
+		cameraMove.enabled = true;
 		questWindow.SetActive(false);
-		Time.timeScale = 1f;
+		//Time.timeScale = 1f;
 		GameIsPause = false;
 		Cursor.visible = false;
 	}

@@ -6,9 +6,9 @@ public class NPCInteraction : MonoBehaviour
 {
 
     [SerializeField]
-    private Camera camera;
+    private Camera cameraMove;
 
-    private QuestGiverScript npc;
+    public QuestGiverScript questGiver;
 
     [SerializeField]
     private LayerMask layerMask;
@@ -20,7 +20,6 @@ public class NPCInteraction : MonoBehaviour
 
     private Transform _selection;
 
-    public GameObject questGiver;
 
 
     // Start is called before the first frame update
@@ -39,14 +38,14 @@ public class NPCInteraction : MonoBehaviour
     {
         if(_selection != null)
 		{
-            //CloseQuestWindow();
-            questPanel.SetActive(false);
+            
             CanRecevieQuest = false;
             _selection = null;
+            questPanel.SetActive(false);
         }
 
 
-        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+        Ray ray = cameraMove.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(ray.origin, ray.direction * 4f, Color.red);
 
         RaycastHit hitInfo;
@@ -55,11 +54,19 @@ public class NPCInteraction : MonoBehaviour
         {
             var selection = hitInfo.transform;
 
-            if (selection.GetComponent<QuestGiverScript>() != null)
+            if (selection.GetComponent<NPCScript>() != null)
             {
-                Debug.Log("NPC możliwy do zagadania");
-                questPanel.SetActive(true);
                 CanRecevieQuest = true;
+                questPanel.SetActive(true);
+				if (Input.GetKeyDown(KeyCode.Mouse0) && CanRecevieQuest)
+				{
+                    questPanel.SetActive(false);
+                    questGiver.OpenQuestWindow();
+                    Debug.Log("NPC możliwy do zagadania");
+                    
+                }
+                
+
             }
             _selection = selection;
         }
