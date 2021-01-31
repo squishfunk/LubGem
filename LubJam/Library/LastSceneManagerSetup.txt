@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes 1/moja scena MM.unity
+- path: Assets/SCENA_PROG.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
