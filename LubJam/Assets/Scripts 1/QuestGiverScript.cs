@@ -50,7 +50,6 @@ public class QuestGiverScript : MonoBehaviour
 	}
 	public void CloseQuestWindow()
 	{
-		Debug.Log("nara");
 		cameraMove.enabled = true;
 		questWindow.SetActive(false);
 		//Time.timeScale = 1f;

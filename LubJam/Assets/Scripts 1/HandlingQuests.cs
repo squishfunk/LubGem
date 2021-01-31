@@ -14,6 +14,8 @@ public class HandlingQuests : MonoBehaviour
 	private TextMeshProUGUI timerMesh;
 	private TextMeshProUGUI itemToFindMesh;
 
+	private bool startTimer = false;
+	float currentTime;
 	private void Start()
 	{
 		timerMesh = timer.GetComponent<TextMeshProUGUI>();
@@ -26,7 +28,9 @@ public class HandlingQuests : MonoBehaviour
 		if (quest.isActive)
 		{
 			StartQuest();
+
 			TimerStart();
+
 		}
 	}
 
@@ -34,18 +38,27 @@ public class HandlingQuests : MonoBehaviour
 	{
 		itemToFindMesh.text = quest.itemToFound.ToString();
 		GUI.SetActive(true);
+		if (startTimer == false)
+		{
+			currentTime = quest.duration;
+			Debug.Log("starttt timer");
+			startTimer = true;
+		}
 	}
 
-	void TimerStart ()
+	void TimerStart()
 	{
-		float currentTime = quest.duration;
-
-		while (currentTime > 0)
+		if (currentTime > 0)
 		{
-			currentTime -= 1 * Time.deltaTime;
+			Debug.Log(currentTime);
+			currentTime -= Time.deltaTime;
+			Debug.Log("timer leci");
 			timerMesh.text = currentTime.ToString("0");
 		}
-		timerMesh.text = currentTime.ToString();
+		else
+		{
 
+		}
 	}
+
 }
