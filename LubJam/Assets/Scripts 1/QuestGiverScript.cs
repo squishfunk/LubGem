@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class QuestGiverScript : MonoBehaviour
 {
+	public FirstPersonLook cameraMove;
 	public static bool GameIsPause = false;
 	public HandlingQuests player;
 
-	public GameObject[] items;
+	private GameObject[] items;
 
 	public Quest quest;
 
@@ -17,72 +19,30 @@ public class QuestGiverScript : MonoBehaviour
 	public Text itemToFound;
 	public Text duration;
 
-    [Header("MM parameters")]
-    public NPCInteraction npcInteraction;
-    private bool isQuestInfoActive = false;
-
 	public void Start()
 	{
 		//PRZYPISUJE WSZYSTKIE PRZEDMIOTY Z FOLDERU RESOURCES/ITEMS DO ZMIENNEJ ITEMS
-		items = Resources.LoadAll<GameObject>("Items");
-
-        //MM
-        npcInteraction = FindObjectOfType<NPCInteraction>();
+		//items = Resources.LoadAll<GameObject>("Items");
+		items = Resources.LoadAll("Items").Cast<GameObject>().ToArray();
+		Debug.Log(items);
 	}
 
 	public void Update()
 	{
-        //MM
-        if(npcInteraction.CanRecevieQuest)
-        {
-            if(Input.GetMouseButtonUp(0) && !isQuestInfoActive)
-            {
-                questWindow.SetActive(true);
-                isQuestInfoActive = true;
-            }
-            else if (Input.GetMouseButtonUp(0) && isQuestInfoActive)
-                    {
-                     questWindow.SetActive(false);
-                     isQuestInfoActive = false;
-            }
-                    
-        }
-        //        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-        //Debug.DrawRay(ray.origin, ray.direction * 2f, Color.red);
 
-        //RaycastHit hitInfo;
-      
-        //if (Physics.Raycast(ray, out hitInfo, 2f));
-        //{
-        //    var selection = hitInfo.transform;
-
-
-		//ZMIENIC TO NA RAYCASTA!!!!!!!!!!!!!
-		//if (Input.GetKeyDown(KeyCode.X)) 
-		//{
-		//	if (GameIsPause)
-		//	{
-		//		CloseQuestWindow();
-		//	}
-		//	else
-		//	{
-		//		CreateRandomQuest();
-		//		OpenQuestWindow();
-		//	}
-			
-		//}
-		
 	}
 
 	public void OpenQuestWindow()
 	{
+		CreateRandomQuest();
+		cameraMove.enabled = false;
 		//nadaje nazwe
 		itemToFound.text = quest.itemToFound.name;
 		duration.text = quest.duration.ToString();
 
 		//stopuje czas gry
 		questWindow.SetActive(true);
-		Time.timeScale = 0f;
+		//Time.timeScale = 0f;
 		GameIsPause = true;
 		Cursor.lockState = CursorLockMode.None;
 		Cursor.lockState = CursorLockMode.Confined;
@@ -90,8 +50,10 @@ public class QuestGiverScript : MonoBehaviour
 	}
 	public void CloseQuestWindow()
 	{
+		Debug.Log("nara");
+		cameraMove.enabled = true;
 		questWindow.SetActive(false);
-		Time.timeScale = 1f;
+		//Time.timeScale = 1f;
 		GameIsPause = false;
 		Cursor.visible = false;
 	}

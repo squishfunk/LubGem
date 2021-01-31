@@ -3,7 +3,17 @@ guid: c247ed7d19538e14295f29abdab76b8f
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black sunglasses
+    second: {fileID: 2100000, guid: d2defa2948aa65643a8e1d001e2fe36d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.007
+    second: {fileID: 2100000, guid: 18c36f8af5eab4f439a2d7e79a22e3cc, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

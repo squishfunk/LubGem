@@ -3,7 +3,22 @@ guid: 48cfec46e9acba14587e356af239df19
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grey letter
+    second: {fileID: 2100000, guid: 3f9c3aa8c61bdbc4488bd5d2f16a8c9b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Purple flower
+    second: {fileID: 2100000, guid: fa4eebfe0bf642d4d97920682c22fa5f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Screen (black)
+    second: {fileID: 2100000, guid: b200e1988f301dc4ab29569cc8f83849, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

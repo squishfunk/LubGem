@@ -6,6 +6,8 @@ public class UIManager : MonoBehaviour
 {
     public bool IsPaused = false;
 
+    public FirstPersonLook cameraMove;
+
     [SerializeField]
     private GameObject PausePanel;
 
@@ -32,12 +34,16 @@ public class UIManager : MonoBehaviour
             PausePanel.SetActive(true);
             IsPaused = true;
             Time.timeScale = 0;
+            cameraMove.enabled = false;
+
         }
         else
         {
+            cameraMove.enabled = true;    
             IsPaused = false;
             Time.timeScale = 1;
             PausePanel.SetActive(false);
+            Cursor.visible = false;
         }
     }
 
