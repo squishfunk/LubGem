@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -11,10 +12,13 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private GameObject PausePanel;
 
+    public Button throwingButton;
+
     // Start is called before the first frame update
     void Start()
     {
         PausePanel.SetActive(false);
+        throwingButton.image.fillAmount = 0;
 
     }
 
@@ -31,6 +35,7 @@ public class UIManager : MonoBehaviour
     {
         if (!IsPaused)
         {
+            Cursor.lockState = CursorLockMode.Locked;
             PausePanel.SetActive(true);
             IsPaused = true;
             Time.timeScale = 0;
@@ -39,12 +44,19 @@ public class UIManager : MonoBehaviour
         }
         else
         {
+            Cursor.lockState = CursorLockMode.None;
             cameraMove.enabled = true;    
             IsPaused = false;
             Time.timeScale = 1;
             PausePanel.SetActive(false);
             Cursor.visible = false;
         }
+    }
+
+    public void ThrowingUI(float throwPower, float maxPower)
+    {
+        throwingButton.image.fillAmount= throwPower / maxPower;
+
     }
 
 

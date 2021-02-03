@@ -17,6 +17,10 @@ public class ItemInteraction : MonoBehaviour
     [SerializeField]
     private GameObject pickUpPanel;
 
+
+    private Ray ray;
+
+    [ContextMenu("ResetRaycast")]
     // Start is called before the first frame update
     void Start()
     {
@@ -26,12 +30,18 @@ public class ItemInteraction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            ResetRaycast();
+            Debug.Log("Działa raycast reset");
+        }
+
         SelectItem();
     }
 
     private void SelectItem()
     {
-        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
+        ray = camera.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(ray.origin, ray.direction * 3f, Color.red);
 
         RaycastHit hitInfo;
@@ -54,5 +64,10 @@ public class ItemInteraction : MonoBehaviour
             }
         }
 
+    }
+    private void ResetRaycast()
+    {
+        ray = camera.ScreenPointToRay(Input.mousePosition);
+        Debug.DrawRay(ray.origin, ray.direction * 3f, Color.red);
     }
 }
